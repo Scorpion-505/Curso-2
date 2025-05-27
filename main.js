@@ -11,7 +11,7 @@ for (let i = 0; i < botoes.length; i++) {
 
     botoes[i].classList.add("ativo");
     textos[i].classList.add("ativo");
-  };
+  }
 }
 
 const contadores = document.querySelectorAll(".contador");
@@ -46,3 +46,10 @@ function atualizaCronometro() {
     contadores[i].textContent = calculaTempo(tempos[i]);
   }
 }
+
+function comecaCronometro() {
+  atualizaCronometro();
+  setInterval(atualizaCronometro, 1000);
+}
+
+comecaCronometro();
